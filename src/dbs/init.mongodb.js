@@ -6,7 +6,7 @@ const {
   db: { host, port, name },
 } = config;
 
-const connectString = `mongodb://${host}:${port}/${name}`;
+const connectString = `mongodb+srv://${host}:${port}/${name}?retryWrites=true&w=majority`;
 
 class Database {
   constructor() {
