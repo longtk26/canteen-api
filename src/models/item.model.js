@@ -25,6 +25,9 @@ const itemSchema = new Schema(
       type: Number,
       required: true,
     },
+    item_image: {
+      type: String,
+    },
     // The cost to make item
     item_cost: {
       type: Number,

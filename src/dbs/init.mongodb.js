@@ -6,7 +6,13 @@ const {
   db: { host, port, name },
 } = config;
 
-const connectString = `mongodb+srv://${host}:${port}/${name}?retryWrites=true&w=majority`;
+const env = process.env.NODE_ENV || "dev";
+const connects = {
+  dev: `mongodb://${host}:${port}/${name}`,
+  pro: `mongodb+srv://${host}:${port}/${name}?retryWrites=true&w=majority`,
+};
+
+const connectString = connects[env];
 
 class Database {
   constructor() {
